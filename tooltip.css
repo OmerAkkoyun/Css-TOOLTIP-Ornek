@@ -1,0 +1,120 @@
+body {
+    margin: 100px;
+}
+
+/*----------------------------------------------------------*/
+.border {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-right: 70px;
+    position: relative;
+
+}
+
+/*----------------------------------------------------------*/
+.tooltip .text {
+    display: none;
+    width: 120px;
+    /*bu değer önemli aşağıda pozisyon belirlerken yarısını kullanıcaz .*/
+    background: black;
+    color: aliceblue;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+/*----------------------------------------------------------*/
+.top {
+    bottom: 105%;
+    left: 50%;
+    margin-left: -60px;
+    /*Yukarıdaki width değerinin yarısı*/
+}
+
+/* Aşağı Ok kodlarına başlıyoruz*/
+.top::after {
+    content: "";
+    /*içerik eklenmek istenirse yazılır.biz boş bıraktık ki içi boş olan bir kare elde edelim daha sonra 3 köşeyi transparan yapıp sadece 1 köşesini ok biçiminde gösterelim diye böyle bir yöntem yapılır...*/
+    position: absolute;
+    /*yerini değiştireceğimiz için absolute yaptık.*/
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+    top: 100%;
+    /*en üste gelsin önce*/
+    left: 45%;
+    /*sonra ok ortada bir yerde olsun deneme yanılma ile bul.*/
+}
+
+/*-------------Alt OK---------------------------------------------*/
+.bottom {
+    top: 105%;
+    left: 50%;
+    margin-left: -60px;
+    /*-Yukarıdaki "Tooltip.text" içindeki width değerinin yarısı her zaman..-*/
+}
+
+.bottom::after {
+    content: "";
+     /*içerik eklenmek istenirse yazılır.biz boş bıraktık ki içi boş olan bir kare elde edelim .daha sonra 3 köşeyi transparan yapıp sadece 1 köşesini ok biçiminde gösterelim ,böylece bir ok elde edebilirz...*/
+    position: absolute;
+    /*yerini değiştireceğimiz için absolute yaptık.*/
+   
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+    bottom: 100%;  /*en alta gelsin önce*/
+    left: 45%; /*sonra ok ortada bir yerde olsun */
+}
+
+/*----------------------------------------------------------*/
+
+.right {
+    left: 105%;
+    /*en sağa git*/
+    bottom: 10%;
+    /*ortalamak için deneme yanılma*/
+}
+
+.right::after {
+    content: "";
+    /*içerik eklenmek istenirse yazılır.biz boş bıraktık ki içi boş olan bir kare elde edelim .daha sonra 3 köşeyi transparan yapıp sadece 1 köşesini ok biçiminde gösterelim ,böylece bir ok elde edebilirz...*/
+    position: absolute;
+    /*yerini değiştireceğimiz için absolute yaptık.*/
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+    top: 30%;
+    /*üste %30 gelsin önce*/
+    right: 100%;
+    /*sonra ok en solda olsun */
+}
+
+/*----------------------------------------------------------*/
+
+.left {
+    right: 105%;
+    /*en sola git*/
+    bottom: 10%;
+    /*ortalamak için deneme yanılma*/
+}
+
+.left::after {
+    content: ""; /*içerik eklenmek istenirse yazılır.biz boş bıraktık ki içi boş olan bir kare elde edelim .daha sonra 3 köşeyi transparan yapıp sadece 1 köşesini ok biçiminde gösterelim ,böylece bir ok elde edebilirz...*/
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+
+    top: 30%;
+    left: 100%
+
+}
+
+/*----------------------------------------------------------*/
+.tooltip:hover .text {
+    display: inline-block;
+
+}
